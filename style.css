@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
 
 :root {
   --colour-red: rgba(255, 0, 0, 1);
@@ -89,8 +89,39 @@ h3,
 h4, 
 h5, 
 h6 {
-  font-family: 'Piazzolla', serif;
+  font-family: 'PT+Serif', serif;
 }
 
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+nav li:nth-of-type(1) {
+  background-color: var(--colour-red);
+}
+
+nav li:nth-of-type(2) {
+  background-color: var(--colour-orange);
+}
+nav li:nth-of-type(3) {
+  background-color: var(--colour-yellow);
+}
+nav li:nth-of-type(4) {
+  background-color: var(--colour-green);
+}
+nav li:nth-of-type(5) {
+  background-color: var(--colour-blue);
+}
+nav li:nth-of-type(6) {
+  background-color: var(--colour-indigo);
+}
 /* TODO temporary, because I keep accidentally clicking on them */
 svg {display: none}
