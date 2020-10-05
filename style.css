@@ -92,36 +92,64 @@ h6 {
   font-family: 'PT+Serif', serif;
 }
 
-nav ul {
+nav ul,
+#about ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+nav ul {
   display: flex;
   justify-content: space-between;
 }
 
-nav li {
+#about ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+}
+
+#about li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li,
+#about li {
   flex: 1;
   text-align: center;
 }
 
-nav li:nth-of-type(1) {
+nav li:nth-of-type(1),
+#about li:nth-child(6n + 1) {
   background-color: var(--colour-red);
 }
 
-nav li:nth-of-type(2) {
+nav li:nth-of-type(2),
+#about li:nth-child(6n + 2) {
   background-color: var(--colour-orange);
 }
-nav li:nth-of-type(3) {
+
+nav li:nth-of-type(3),
+#about li:nth-child(6n + 3) {
   background-color: var(--colour-yellow);
 }
-nav li:nth-of-type(4) {
+
+nav li:nth-of-type(4),
+#about li:nth-child(6n + 4) {
   background-color: var(--colour-green);
 }
-nav li:nth-of-type(5) {
+
+nav li:nth-of-type(5),
+#about li:nth-of-type(6n + 5) {
   background-color: var(--colour-blue);
 }
-nav li:nth-of-type(6) {
+
+nav li:nth-of-type(6),
+#about li:nth-of-type(6n + 6) {
   background-color: var(--colour-indigo);
 }
+
 /* TODO temporary, because I keep accidentally clicking on them */
 svg {display: none}
