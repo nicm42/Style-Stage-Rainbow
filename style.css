@@ -8,12 +8,12 @@
   --colour-blue: rgba(0, 0, 255, 1);
   --colour-indigo: rgba(75, 0, 130, 1);
 
-  --colour-red-faded: rgba(255, 0, 0, 0.25);
-  --colour-orange-faded: rgba(255, 165, 0, 0.25);
-  --colour-yellow-faded: rgba(255, 255, 0, 0.25);
-  --colour-green-faded: rgba(0, 128, 0, 0.25);
-  --colour-blue-faded: rgba(0, 0, 255, 0.25);
-  --colour-indigo-faded: rgba(75, 0, 130, 0.25);
+  --colour-red-faded: rgba(255, 0, 0, 0.1);
+  --colour-orange-faded: rgba(255, 165, 0, 0.1);
+  --colour-yellow-faded: rgba(255, 255, 0, 0.1);
+  --colour-green-faded: rgba(0, 128, 0, 0.1);
+  --colour-blue-faded: rgba(0, 0, 255, 0.1);
+  --colour-indigo-faded: rgba(75, 0, 130, 0.1);
 
   --gradient-down: linear-gradient(var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-right: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
@@ -132,6 +132,18 @@ a::after {
   background: var(--gradient-right);
 }
 
+.skip-link::after,
+header .link-github::after,
+nav ul a::after {
+  width: 0;
+}
+
+.skip-link {
+  padding: 0.5em 1.5em;
+  border-radius: 0.25em;
+  background: var(--gradient-right-faded);
+}
+
 /********** Header **********/
 
 header {
@@ -139,12 +151,13 @@ header {
 }
 
 header h1 {
-  font-size: 3rem;
-  line-height: 1.2;
+  font-size: 4rem;
+  line-height: 2;
 }
 
 header h2 {
   line-height: 0.8;
+  margin-bottom: 1em;
 }
 
 header .link-github {
@@ -153,6 +166,7 @@ header .link-github {
   padding: 0.5em 1.5em;
   margin-top: 0.5em;
   margin-bottom: 1em;
+  border-radius: 0.25em;
   background: var(--gradient-right-faded);
 }
 
@@ -161,11 +175,6 @@ header svg {
 }
 
 /********** Navigation **********/
-
-.link-github::after,
-nav ul a::after {
-  width: 0;
-}
 
 nav ul,
 #about ul {
