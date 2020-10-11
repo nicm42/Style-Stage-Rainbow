@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@300;400;700&display=swap');
 :root {
   --colour-red: rgba(255, 0, 0, 1);
@@ -9,8 +8,16 @@
   --colour-blue: rgba(0, 0, 255, 1);
   --colour-indigo: rgba(75, 0, 130, 1);
 
+  --colour-red-faded: rgba(255, 0, 0, 0.25);
+  --colour-orange-faded: rgba(255, 165, 0, 0.25);
+  --colour-yellow-faded: rgba(255, 255, 0, 0.25);
+  --colour-green-faded: rgba(0, 128, 0, 0.25);
+  --colour-blue-faded: rgba(0, 0, 255, 0.25);
+  --colour-indigo-faded: rgba(75, 0, 130, 0.25);
+
   --gradient-down: linear-gradient(var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-right: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
+  --gradient-right-faded: linear-gradient(to right, var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
 }
 
 /*
@@ -72,6 +79,8 @@ select {
   }
 }
 
+/********** General **********/
+
 html {
   background: white;
   background: var(--gradient-down);
@@ -86,7 +95,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-header,
 main,
 aside,
 footer {
@@ -124,6 +132,40 @@ a::after {
   background: var(--gradient-right);
 }
 
+/********** Header **********/
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+header h2 {
+  line-height: 0.8;
+}
+
+header .link-github {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  background-clip: padding-box;
+  border: 5px solid;
+  border-image-source: var(--gradient-right);
+  border-image-slice: 1;
+}
+
+header svg {
+  height: 1em;
+}
+
+/********** Navigation **********/
+
+.link-github::after,
 nav ul a::after {
   width: 0;
 }
@@ -139,6 +181,12 @@ nav ul {
   justify-content: space-between;
     background: var(--gradient-right);
 }
+
+nav li {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/********** About **********/
 
 #about ul {
   /* body has margin of 1am and padding of 1em on each side and grid has 1em gap
@@ -160,10 +208,6 @@ nav li,
 #about li {
   flex: 1;
   text-align: center;
-}
-
-nav li {
-  background-color: rgba(255, 255, 255, 0.75);
 }
 
 #about li:nth-child(6n + 1) {
@@ -191,4 +235,4 @@ nav li {
 }
 
 /* TODO temporary, because I keep accidentally clicking on them */
-svg {display: none}
+footer svg {display: none}
