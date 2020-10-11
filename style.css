@@ -92,6 +92,28 @@ h6 {
   font-family: 'PT+Serif', serif;
 }
 
+a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+a::visited {
+  color: black;
+}
+
+a::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: black;
+  background: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
+}
+
 nav ul,
 #about ul {
   list-style-type: none;
