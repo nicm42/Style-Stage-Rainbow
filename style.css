@@ -114,6 +114,10 @@ a::after {
   background: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
 }
 
+nav ul a::after {
+  width: 0;
+}
+
 nav ul,
 #about ul {
   list-style-type: none;
@@ -123,6 +127,7 @@ nav ul,
 nav ul {
   display: flex;
   justify-content: space-between;
+  background: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
 }
 
 #about ul {
@@ -144,34 +149,32 @@ nav li,
   text-align: center;
 }
 
-nav li:nth-of-type(1),
+nav li {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
 #about li:nth-child(6n + 1) {
-  background-color: var(--colour-red);
+  border: 2px solid var(--colour-red);
 }
 
-nav li:nth-of-type(2),
 #about li:nth-child(6n + 2) {
-  background-color: var(--colour-orange);
+  border: 2px solid var(--colour-orange);
 }
 
-nav li:nth-of-type(3),
 #about li:nth-child(6n + 3) {
-  background-color: var(--colour-yellow);
+  border: 2px solid var(--colour-yellow);
 }
 
-nav li:nth-of-type(4),
 #about li:nth-child(6n + 4) {
-  background-color: var(--colour-green);
+  border: 2px solid var(--colour-green);
 }
 
-nav li:nth-of-type(5),
 #about li:nth-of-type(6n + 5) {
-  background-color: var(--colour-blue);
+  border: 2px solid var(--colour-blue);
 }
 
-nav li:nth-of-type(6),
 #about li:nth-of-type(6n + 6) {
-  background-color: var(--colour-indigo);
+  border: 2px solid var(--colour-indigo);
 }
 
 /* TODO temporary, because I keep accidentally clicking on them */
