@@ -151,8 +151,22 @@ header {
 }
 
 header h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 2;
+}
+
+/* gradient text - but the yellow only shows up if it has a black border
+  so only do the gradient text if we can also have a black border */
+@supports (-webkit-text-stroke: 1px black) {
+  header h1 {
+    display: inline; /* Make it as wide as the text so the whole gradient shows */
+    background: black;
+    background: var(--gradient-right);
+    -webkit-text-stroke: 1px black;
+    background-size: 100%;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 header h2 {
@@ -189,7 +203,7 @@ nav ul {
   border: 5px solid;
   border-image-source: var(--gradient-right);
   border-image-slice: 1;
-}
+ }
 
 nav li {
   padding: 1em 0;
@@ -247,6 +261,22 @@ nav li,
 #about li:nth-of-type(6n + 6) {
   border: 2px solid var(--colour-indigo);
 }
+
+blockquote {
+  position: relative;
+}
+
+blockquote::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: -15px;
+  width: 5px;
+  background: black;
+  background: var(--gradient-down);
+}
+
 
 /* TODO temporary, because I keep accidentally clicking on them */
 footer svg {display: none}
