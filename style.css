@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@300;400;700&display=swap');
 :root {
   --colour-red: rgba(255, 0, 0, 1);
   --colour-orange: rgba(255, 165, 0, 1);
@@ -99,7 +99,7 @@ h3,
 h4, 
 h5, 
 h6 {
-  font-family: 'PT+Serif', serif;
+  font-family: 'Itim', cursive;
 }
 
 a {
