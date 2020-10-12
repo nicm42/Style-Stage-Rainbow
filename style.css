@@ -148,12 +148,14 @@ a::visited {
 
 .skip-link,
 header .link-github,
-nav ul a {
+nav ul a,
+.page-footer li a {
   font-style: normal;
   border-bottom-width: 0;
 }
 
-.skip-link {
+.skip-link,
+.page-footer li a {
   padding: 0.5em 1.5em;
   border-radius: 0.25em;
   background: var(--gradient-right-faded);
@@ -199,7 +201,7 @@ header .link-github {
   background: var(--gradient-right-faded);
 }
 
-header svg {
+svg {
   height: 1em;
 }
 
@@ -366,4 +368,14 @@ blockquote::before {
 
 /********** Styles **********/
 
-footer svg {display: none} /*TODO delete*/
+
+/********** Page footer **********/
+
+.page-footer ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.page-footer li + li {
+  padding-top: 1em;
+}
