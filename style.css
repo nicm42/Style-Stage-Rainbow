@@ -25,6 +25,7 @@
   --gradient-down: linear-gradient(var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-right: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-right-faded: linear-gradient(to right, var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
+  --gradient-down-right: linear-gradient(135deg, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
 }
 
 /*
@@ -358,7 +359,7 @@ blockquote::before {
   padding: 1em;
   text-align: center;
   border: 5px solid;
-  border-image-source: var(--gradient-right);
+  border-image-source: var(--gradient-down-right);
   border-image-slice: 1;
 }
 
