@@ -149,12 +149,14 @@ a::visited {
 .skip-link,
 header .link-github,
 nav ul a,
+#files a,
 .page-footer li a {
   font-style: normal;
   border-bottom-width: 0;
 }
 
 .skip-link,
+#files a,
 .page-footer li a {
   padding: 0.5em 1.5em;
   border-radius: 0.25em;
@@ -343,6 +345,10 @@ blockquote::before {
   background-color: var(--colour-blue-half);
   color: white;
 }
+
+/********** Files **********/
+
+
 
 /********** Profile **********/
 
