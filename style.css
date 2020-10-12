@@ -342,6 +342,28 @@ blockquote::before {
   color: white;
 }
 
+/********** Profile **********/
+
+.profile {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 1em;
+  text-align: center;
+  border: 5px solid;
+  border-image-source: var(--gradient-right);
+  border-image-slice: 1;
+}
+
+.profile .container {
+  margin: 0;
+}
+
+.profile ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+}
+
 /********** Styles **********/
 
 footer svg {display: none} /*TODO delete*/
