@@ -23,6 +23,7 @@
   --colour-indigo-faded: rgba(75, 0, 130, 0.1);
 
   --gradient-down: linear-gradient(var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
+  --gradient-down-faded: linear-gradient(var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
   --gradient-right: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-right-faded: linear-gradient(to right, var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
   --gradient-down-right: linear-gradient(135deg, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
@@ -375,6 +376,34 @@ blockquote::before {
 
 /********** Styles **********/
 
+#styles .container {
+  text-align: center;
+  width: calc(100vw - 4em);
+}
+
+.features {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.features li {
+  display: inline;
+  padding: 1em 3em;
+  border-radius: 0.25em;
+  background: var(--gradient-down-faded);
+}
+
+.features li a {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.features li span span {
+  display: block;
+}
 
 /********** Page footer **********/
 
