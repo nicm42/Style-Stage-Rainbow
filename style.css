@@ -629,12 +629,14 @@ blockquote::before {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .page-footer li {
   margin-top: 1.5em; /* Added 1em of padding total to top & bottom to make the button*/
+  margin-left: 0.5em;
+  margin-right 0.5em;
 }
 
 .page-footer .link-twittercontact,
