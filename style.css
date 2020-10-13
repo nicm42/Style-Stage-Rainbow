@@ -20,21 +20,17 @@
 
   --colour-yellow-three-quarters: rgba(255, 255, 0, 0.75);
 
-  --colour-red-faded: rgba(255, 0, 0, 0.1);
-  --colour-orange-faded: rgba(255, 165, 0, 0.1);
-  --colour-yellow-faded: rgba(255, 255, 0, 0.1);
-  --colour-green-faded: rgba(0, 128, 0, 0.1);
-  --colour-blue-faded: rgba(0, 0, 255, 0.1);
-  --colour-indigo-faded: rgba(75, 0, 130, 0.1);
+  --colour-dark: black;
+  --colour-light: white;
+  --colour-white-nearly: rgba(255, 255, 255, 0.95);
 
   --gradient-down: linear-gradient(var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
-  --gradient-down-faded: linear-gradient(var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
   --gradient-right: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-right-half: linear-gradient(to right, var(--colour-red-half) 0%, var(--colour-orange-half) 20%, var(--colour-yellow-half) 40%, var(--colour-green-half) 60%, var(--colour-blue-half) 80%, var(--colour-indigo-half) 100%);
-  --gradient-right-faded: linear-gradient(to right, var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
-  --gradient-down-right: linear-gradient(135deg, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
 
   --width-limit: 60ch;
+  --font-body: 'Poppins', sans-serif;
+  --font-headings: 'Itim', cursive;
 }
 
 /*
@@ -113,11 +109,11 @@ body {
                        "styles"
                        "footer";
   gap: 1em;
-  background: white;
+  background: var(--colour-light);
   background: var(--gradient-down);
   background-attachment: fixed;
-  font-family: 'Poppins', sans-serif;
-  color: black;
+  font-family: var(--font-body);
+  color: var(--colour-dark);
 }
 
 h1, 
@@ -126,7 +122,7 @@ h3,
 h4, 
 h5, 
 h6 {
-  font-family: 'Itim', cursive;
+  font-family: var(--font-headings);
 }
 
 h2 {
@@ -180,7 +176,7 @@ header,
 main,
 aside,
 footer {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--colour-white-nearly);
   border-radius: 0.5em;
 }
 
@@ -216,7 +212,7 @@ footer {
 .link-support {
   text-decoration: none;
   padding: 0.5em 1em;
-  background-color: white;
+  background-color: var(--colour-light);
   color: var(--colour-blue);
   border: 0.15em solid;
   border-image-source: var(--gradient-right-half);
@@ -292,9 +288,9 @@ header h1 {
   so only do the gradient text if we can also have a black border */
 @supports (-webkit-text-stroke: 1px black) {
   header h1 {
-    background: black;
+    background: var(--colour-dark);
     background: var(--gradient-right);
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px var(--colour-dark);
     background-size: 100%;
     background-clip: text;
     color: transparent;
@@ -332,21 +328,21 @@ nav ul {
 nav li {
   padding: 1em 0;
   flex: 1;
-  background-color: white;
+  background-color: var(--colour-light);
   text-align: center;
 }
 
 nav li:nth-of-type(6n + 2),
 nav li:nth-of-type(6n + 4),
 nav li:nth-of-type(6n + 6) {
-  border-left: 0.15em solid black;
+  border-left: 0.15em solid var(--colour-dark);
 }
 
 nav li:nth-of-type(6n + 3),
 nav li:nth-of-type(6n + 4),
 nav li:nth-of-type(6n + 5),
 nav li:nth-of-type(6n + 6) {
-  border-top: 0.15em solid black;
+  border-top: 0.15em solid var(--colour-dark);
 }
 
 nav a {
@@ -399,7 +395,7 @@ blockquote::before {
   bottom: 0;
   left: -0.75em;
   width: 0.25em;
-  background: black;
+  background: var(--colour-dark);
   background: var(--gradient-down);
 }
 
@@ -500,7 +496,7 @@ blockquote::before {
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
-  background-color: white;
+  background-color: var(--colour-light);
   text-align: center;
 }
 
@@ -749,13 +745,13 @@ blockquote::before {
   nav li:nth-of-type(6n + 3),
   nav li:nth-of-type(6n + 5),
   nav li:nth-of-type(6n + 6) {
-    border-left: 0.15em solid black;
+    border-left: 0.15em solid var(--colour-dark);
   }
 
   nav li:nth-of-type(6n + 4),
   nav li:nth-of-type(6n + 5),
   nav li:nth-of-type(6n + 6) {
-    border-top: 0.15em solid black;
+    border-top: 0.15em solid var(--colour-dark);
   }
 
   nav li:nth-of-type(6n + 4) {
@@ -781,7 +777,7 @@ blockquote::before {
   }
 
   nav li:nth-of-type(6n + 4) {
-    border-left: 0.15em solid black;
+    border-left: 0.15em solid var(--colour-dark);
   }
 
 }
