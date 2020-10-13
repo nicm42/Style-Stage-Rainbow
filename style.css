@@ -191,20 +191,23 @@ svg {
 /********** Header **********/
 
 header {
+  padding-bottom: 2em;
   text-align: center;
   background: var(--colour-yellow);
 }
 
 header h1 {
+  display: inline-block;
   font-size: 5rem;
-  line-height: 2;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
 }
 
 /* gradient text - but the yellow only shows up if it has a black border
   so only do the gradient text if we can also have a black border */
 @supports (-webkit-text-stroke: 1px black) {
   header h1 {
-    display: inline; /* Make it as wide as the text so the whole gradient shows */
+    display: inline-block; /* Make it as wide as the text so the whole gradient shows */
     background: black;
     background: var(--gradient-right);
     -webkit-text-stroke: 1px black;
@@ -216,7 +219,11 @@ header h1 {
 
 header h2 {
   line-height: 0.8;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+}
+
+header p {
+  margin-bottom: 3em;
 }
 
 /********** Navigation **********/
