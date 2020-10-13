@@ -382,6 +382,10 @@ blockquote::before {
 
 /********** Contribute **********/
 
+#contribute h2 {
+  color: var(--colour-blue);
+}
+
 #contribute ol {
   list-style-type: none;
   counter-reset: steps;
