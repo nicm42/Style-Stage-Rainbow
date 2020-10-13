@@ -159,6 +159,9 @@ footer {
 /* buttons */
 .skip-link,
 .link-guidelines,
+.link-downloadcss,
+.link-downloadhtml,
+.link-codepen,
 .link-github,
 .link-twittercontact,
 .link-rss,
@@ -176,6 +179,12 @@ footer {
 .skip-link:focus,
 .link-guidelines:hover,
 .link-guidelines:focus,
+.link-downloadcss:hover,
+.link-downloadcss:focus,
+.link-downloadhtml:hover,
+.link-downloadhtml:focus,
+.link-codepen:hover,
+.link-codepen:focus,
 .link-github:hover,
 .link-github:focus,
 .link-twittercontact:hover,
@@ -429,7 +438,17 @@ blockquote::before {
 
 /********** Files **********/
 
+#files {
+  background-color: transparent; /* because this is a container in a container, it's much whiter than everything else, so this fixes it */
+}
 
+#files h3 {
+  margin-bottom: 1em;
+}
+
+#files a + a {
+  margin-left: 1em;
+}
 
 /********** Profile **********/
 
