@@ -103,6 +103,14 @@ html {
 body {
   margin: 1em;
   border-radius: 0.5em;
+  display: grid;
+  grid-template-areas: "header"
+                       "nav"
+                       "main"
+                       "profile"
+                       "styles"
+                       "footer";
+  gap: 1em;
   background: white;
   background: var(--gradient-down);
   background-attachment: fixed;
@@ -215,6 +223,7 @@ svg {
 }
 
 /********** Skip link **********/
+
 .skip-link {
   position: absolute;
   top: 1em;
@@ -229,6 +238,7 @@ svg {
 /********** Header **********/
 
 header {
+  grid-area: header;
   padding-bottom: 2em;
   text-align: center;
   background: var(--colour-yellow);
@@ -269,7 +279,7 @@ header p {
 /********** Navigation **********/
 
 nav {
-  margin-top: 2em;
+  grid-area: nav;
 }
 
 nav ul {
@@ -318,6 +328,10 @@ nav a:focus {
 
 /********** About **********/
 
+main {
+  grid-area: main;
+}
+
 #about .container:first-of-type h2 {
   color: var(--colour-red);
 }
@@ -343,7 +357,7 @@ and just the p elements to be limited */
 #about ul {
   list-style-type: none;
   padding-left: 0;
-  margin: 0 auto;
+  margin: 1em auto 2em auto;
   max-width: calc(100vw - 4em); /* the em figure comes from the body and container's margins and padding + grid gap */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -476,8 +490,7 @@ blockquote::before {
 }
 
 #files h3 {
-  margin-bottom: 1em;
-  text-align: left;
+   text-align: left;
 }
 
 #files a {
@@ -485,7 +498,7 @@ blockquote::before {
   text-align: center;
 }
 
-#files a + a {
+#files a {
   margin-top: 1em;
 }
 
@@ -529,11 +542,12 @@ blockquote::before {
 /********** Profile **********/
 
 .profile {
+  grid-area: profile;
   text-align: center;
 }
 
 .profile h4 {
-  font-size: 1.5rem;
+  font-size: 1.5rem;  
 }
 
 .profile ul {
@@ -548,7 +562,7 @@ blockquote::before {
   display: block;
 }
 
-.profile li + li {
+.profile li {
   margin-top: 1em;
 }
 
@@ -563,6 +577,7 @@ blockquote::before {
 /********** Styles **********/
 
 #styles {
+  grid-area: styles;
   text-align: center;
 }
 
@@ -587,6 +602,25 @@ blockquote::before {
 }
 
 /********** Page footer **********/
+
+.page-footer {
+  grid-area: footer;
+}
+
+.page-footer p {
+  max-width: var(--width-limit);
+  margin-left: auto; /* can't use margin: 0 auto here because that gets rid of the space between the paragraphs */
+  margin-right: auto;
+}
+
+.page-footer p:last-of-type {
+  max-width: 100%;
+  text-align: center;
+}
+
+.page-footer .container {
+  margin-top: 0;
+}
 
 .page-footer ul {
   list-style-type: none;
@@ -642,4 +676,88 @@ blockquote::before {
 
 .page-footer p:last-of-type {
   font-size: 0.85rem;
+}
+
+/********** Media queries **********/
+
+@media screen and (min-width: 540px) {
+  #files a+a {
+    margin-left: 1em;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    grid-template-areas: "header header"
+      "nav nav"
+      "main main"
+      "profile styles"
+      "footer footer";
+  }
+
+  nav ul {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  nav li:nth-of-type(6n + 2),
+  nav li:nth-of-type(6n + 3),
+  nav li:nth-of-type(6n + 5),
+  nav li:nth-of-type(6n + 6) {
+    border-left: 2px solid black;
+  }
+
+  nav li:nth-of-type(6n + 4),
+  nav li:nth-of-type(6n + 5),
+  nav li:nth-of-type(6n + 6) {
+    border-top: 2px solid black;
+  }
+
+  nav li:nth-of-type(6n + 4) {
+    border-left: none;
+  }
+
+  nav li:nth-of-type(6n + 3) {
+    border-top: none;
+  }
+
+}
+
+@media screen and (min-width: 800px) {
+  nav ul {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  nav li:nth-of-type(6n + 4),
+  nav li:nth-of-type(6n + 5),
+  nav li:nth-of-type(6n + 6) {
+    border-top: none;
+  }
+
+  nav li:nth-of-type(6n + 4) {
+    border-left: 2px solid black;
+  }
+
+}
+
+@media screen and (min-width: 1000px) {
+  .profile ul {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .profile ul {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #styles ul {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
