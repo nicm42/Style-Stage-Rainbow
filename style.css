@@ -452,26 +452,6 @@ blockquote::before {
 
 /********** Profile **********/
 
-/* .profile {
-  display: inline-block;
-  margin-top: 2em;
-  padding: 1em;
-  text-align: center;
-  border: 5px solid;
-  border-image-source: var(--gradient-down-right);
-  border-image-slice: 1;
-}
-
-.profile .container {
-  margin: 0;
-}
-
-.profile ul {
-  list-style-type: none;
-  padding-left: 0;
-  text-align: left;
-} */
-
 .profile {
   text-align: center;
 }
@@ -507,7 +487,34 @@ blockquote::before {
 
 /********** Styles **********/
 
+#styles {
+  text-align: center;
+}
 
+#styles h2 {
+  color: var(--colour-indigo);
+}
+
+#styles ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#styles li {
+  display: inline-block;
+}
+
+#styles li span {
+  display: block;
+}
+
+#styles li+li {
+  margin-left: 2em;
+}
+
+#styles li span span {
+  display: block;
+}
 
 /********** Page footer **********/
 
