@@ -133,6 +133,37 @@ h2 {
   line-height: 1;
 }
 
+/* rainbow underlines on section headers */
+#about h2,
+#guidelines h2,
+#contribute h2 {
+  position: relative;
+  display: inline-block; /* so it's only as wide as the text, so the underline is in right place */
+  left: 50%;
+  transform: translateX(-50%); /* to then centre it again */
+}
+
+/* whole section is centred, so we don't need to re-centre the heading */
+.profile h4,
+#styles h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#about h2::after,
+#guidelines h2::after,
+#contribute h2::after,
+.profile h4::after,
+#styles h2::after {
+  position: absolute;
+  content: '';
+  bottom: -0.2em;
+  left: 0;
+  width: 25%;
+  height: 0.15em;
+  background: var(--gradient-right);
+}
+
 a {
   color: var(--colour-indigo);
   text-decoration-color: var(--colour-green);
