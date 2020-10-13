@@ -452,7 +452,7 @@ blockquote::before {
 
 /********** Profile **********/
 
-.profile {
+/* .profile {
   display: inline-block;
   margin-top: 2em;
   padding: 1em;
@@ -470,6 +470,39 @@ blockquote::before {
   list-style-type: none;
   padding-left: 0;
   text-align: left;
+} */
+
+.profile {
+  text-align: center;
+}
+
+.profile h4 {
+  font-size: 1.5rem;
+}
+
+.profile ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.profile li {
+  display: inline-block;
+}
+
+.profile li span {
+  display: block;
+}
+
+.profile li + li {
+  margin-left: 2em;
+}
+
+.profile li span:first-child {
+  font-weight: bold;
+}
+
+.profile li span span {
+  display: block;
 }
 
 /********** Styles **********/
