@@ -91,9 +91,6 @@ select {
 /********** General **********/
 
 html {
-  background: white;
-  background: var(--gradient-down);
-  background-attachment: fixed;
   scroll-behavior: smooth;
 }
 
@@ -101,15 +98,11 @@ body {
   margin: 1em;
   padding: 1em;
   border-radius: 0.5em;
-  background-color: rgba(255, 255, 255, 0.75);
+  background: white;
+  background: var(--gradient-down);
+  background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
   color: black;
-}
-
-main,
-aside,
-footer {
-  max-width: 60ch;
 }
 
 h1, 
@@ -119,6 +112,36 @@ h4,
 h5, 
 h6 {
   font-family: 'Itim', cursive;
+}
+
+a {
+  color: var(--colour-indigo);
+  text-decoration-color: var(--colour-green);
+  text-decoration-thickness: 0.1em; /* This currently only works in Firefox and Safari, but looks fine without it, just slightly less exciting */
+}
+
+a:hover,
+a:focus {
+  color: var(--colour-green);
+  text-decoration-thickness: 0.15em;
+}
+
+header,
+main,
+aside,
+footer {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.5em;
+}
+
+.container {
+  padding: 1em;
+}
+#about .container,
+#guidelines .container,
+#contribute .container {
+  max-width: 60ch;
+  margin: 0 auto;
 }
 
 #about h2,
@@ -132,43 +155,16 @@ h6 {
   margin-top: 2em;
 }
 
-a {
-  position: relative;
-  display: inline-block;
-  line-height: 1.1;
-  text-decoration: none;
-  color: black;
-  font-style: italic;
-  border-bottom: 2px solid;
-  border-image-source: var(--gradient-right);
-  border-image-slice: 1;
-}
-
-a::visited {
-  color: black;
-}
-
-.skip-link,
-header .link-github,
-nav ul a,
-#files a,
-.page-footer li a {
-  font-style: normal;
-  border-bottom-width: 0;
-}
-
-.skip-link,
-#files a,
-.page-footer li a {
-  padding: 0.5em 1.5em;
-  border-radius: 0.25em;
-  background: var(--gradient-right-faded);
+svg {
+  height: 1em;
+  fill: var(--colour-blue)
 }
 
 /********** Header **********/
 
 header {
   text-align: center;
+  background: var(--colour-yellow);
 }
 
 header h1 {
@@ -193,20 +189,6 @@ header h1 {
 header h2 {
   line-height: 0.8;
   margin-bottom: 1em;
-}
-
-header .link-github {
-  display: inline-block;
-  position: relative;
-  padding: 0.5em 1.5em;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-  border-radius: 0.25em;
-  background: var(--gradient-right-faded);
-}
-
-svg {
-  height: 1em;
 }
 
 /********** Navigation **********/
@@ -237,9 +219,7 @@ nav li + li {
 /********** About **********/
 
 #about ul {
-  /* body has margin of 1am and padding of 1em on each side and grid has 1em gap
-    so we have 100vw - 5em width available for this grid */
-  width: calc(100vw - 5em);
+  width: calc(100vw - 9em); /* the 9em comes from the body and container's margins and padding + grid gap */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 1fr;
@@ -324,28 +304,27 @@ blockquote::before {
   position: absolute;
   content: counter(steps);
   left: -2em;
-  border-radius: 50%;
   width: 1.5em;
   height: 1.5em;
+  border-radius: 50%;
+  background-color: white;
   text-align: center;
 }
 
 #contribute ol li:nth-child(4n + 1)::before {
-  background-color: var(--colour-red-half);
-  color: white;
+  border: 1px solid var(--colour-red);
 }
 
 #contribute ol li:nth-child(4n + 2)::before {
-  background-color: var(--colour-orange-half);
+  border: 1px solid var(--colour-green);
 }
 
 #contribute ol li:nth-child(4n + 3)::before {
-  background-color: var(--colour-yellow-half);
+  border: 1px solid var(--colour-blue);
 }
 
 #contribute ol li:nth-child(4n + 4)::before {
-  background-color: var(--colour-blue-half);
-  color: white;
+  border: 1px solid var(--colour-indigo);
 }
 
 /********** Files **********/
@@ -376,41 +355,9 @@ blockquote::before {
 
 /********** Styles **********/
 
-#styles .container {
-  text-align: center;
-  width: calc(100vw - 4em);
-}
 
-.features {
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.features li {
-  display: inline;
-  padding: 1em 3em;
-  border-radius: 0.25em;
-  background: var(--gradient-down-faded);
-}
-
-.features li a {
-  display: inline-block;
-  font-weight: bold;
-}
-
-.features li span span {
-  display: block;
-}
 
 /********** Page footer **********/
-
-.page-footer ul {
-  padding-left: 0;
-  list-style-type: none;
-}
 
 .page-footer li + li {
   padding-top: 1em;
