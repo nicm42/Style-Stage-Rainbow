@@ -28,6 +28,8 @@
   --gradient-right-half: linear-gradient(to right, var(--colour-red-half) 0%, var(--colour-orange-half) 20%, var(--colour-yellow-half) 40%, var(--colour-green-half) 60%, var(--colour-blue-half) 80%, var(--colour-indigo-half) 100%);
   --gradient-right-faded: linear-gradient(to right, var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
   --gradient-down-right: linear-gradient(135deg, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
+
+  --width-limit: 60ch;
 }
 
 /*
@@ -97,7 +99,6 @@ html {
 
 body {
   margin: 1em;
-  padding: 1em;
   border-radius: 0.5em;
   background: white;
   background: var(--gradient-down);
@@ -143,7 +144,7 @@ footer {
 #about .container,
 #guidelines .container,
 #contribute .container {
-  max-width: 60ch;
+  max-width: var(--width-limit);
   margin: 0 auto;
 }
 
@@ -278,8 +279,30 @@ nav a:focus {
 
 /********** About **********/
 
+#about .container:first-of-type h2 {
+  color: var(--colour-red);
+}
+
+#about .container:last-of-type h2 {
+  color: var(--colour-orange);
+}
+
+/* Want the grid to use all the width
+so we'll tell this container to use all the width
+and just the p elements to be limited */
+#about .container:last-of-type {
+  max-width: 100%;
+  margin: 0;
+}
+
+#about .container:last-of-type p {
+  max-width: var(--width-limit);
+  margin-left: auto; /* can't use margin: 0 auto here because that gets rid of the space between the paragraphs */
+  margin-right: auto;
+}
+
 #about ul {
-  width: calc(100vw - 9em); /* the 9em comes from the body and container's margins and padding + grid gap */
+  width: calc(100vw - 7em); /* the em figure comes from the body and container's margins and padding + grid gap */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 1fr;
