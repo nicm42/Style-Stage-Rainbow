@@ -25,6 +25,7 @@
   --gradient-down: linear-gradient(var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
   --gradient-down-faded: linear-gradient(var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
   --gradient-right: linear-gradient(to right, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
+  --gradient-right-half: linear-gradient(to right, var(--colour-red-half) 0%, var(--colour-orange-half) 20%, var(--colour-yellow-half) 40%, var(--colour-green-half) 60%, var(--colour-blue-half) 80%, var(--colour-indigo-half) 100%);
   --gradient-right-faded: linear-gradient(to right, var(--colour-red-faded) 0%, var(--colour-orange-faded) 20%, var(--colour-yellow-faded) 40%, var(--colour-green-faded) 60%, var(--colour-blue-faded) 80%, var(--colour-indigo-faded) 100%);
   --gradient-down-right: linear-gradient(135deg, var(--colour-red) 0%, var(--colour-orange) 20%, var(--colour-yellow) 40%, var(--colour-green) 60%, var(--colour-blue) 80%, var(--colour-indigo) 100%);
 }
@@ -135,8 +136,10 @@ footer {
 }
 
 .container {
+  margin-top: 2em;
   padding: 1em;
 }
+
 #about .container,
 #guidelines .container,
 #contribute .container {
@@ -151,8 +154,33 @@ footer {
   text-align: center;
 }
 
-.container {
-  margin-top: 2em;
+/* buttons */
+.skip-link,
+.link-github,
+.link-twittercontact,
+.link-rss,
+.link-support {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  background-color: white;
+  color: var(--colour-blue);
+  border: 2px solid;
+  border-image-source: var(--gradient-right-half);
+  border-image-slice: 1;
+}
+
+.skip-link:hover,
+.skip-link:focus,
+.link-github:hover,
+.link-github:focus,
+.link-twittercontact:hover,
+.link-twittercontact:focus,
+.link-rss:hover,
+.link-rss:focus,
+.link-support:hover,
+.link-support:focus {
+  color: black;
+  border-image-source: var(--gradient-right);
 }
 
 svg {
@@ -214,6 +242,16 @@ nav li {
 
 nav li + li {
   border-left: 2px solid black;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--colour-blue);
+}
+
+nav a:hover,
+nav a:focus {
+  color: black;
 }
 
 /********** About **********/
