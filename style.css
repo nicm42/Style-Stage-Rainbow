@@ -539,17 +539,16 @@ blockquote::before {
 .profile ul {
   list-style-type: none;
   padding-left: 0;
+  margin-bottom: 2em;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
 }
 
 .profile li span {
   display: block;
 }
 
-.profile li:last-of-type,
-.profile li:nth-last-of-type(2) {
+.profile li + li {
   margin-top: 1em;
 }
 
