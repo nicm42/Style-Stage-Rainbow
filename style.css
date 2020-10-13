@@ -18,6 +18,8 @@
   --colour-blue-half: rgba(0, 0, 255, 0.5);
   --colour-indigo-half: rgba(75, 0, 130, 0.5);
 
+  --colour-yellow-three-quarters: rgba(255, 255, 0, 0.75);
+
   --colour-red-faded: rgba(255, 0, 0, 0.1);
   --colour-orange-faded: rgba(255, 165, 0, 0.1);
   --colour-yellow-faded: rgba(255, 255, 0, 0.1);
@@ -241,7 +243,7 @@ header {
   grid-area: header;
   padding-bottom: 2em;
   text-align: center;
-  background: var(--colour-yellow);
+  background: var(--colour-yellow-three-quarters);
 }
 
 header .container {
