@@ -218,7 +218,7 @@ footer {
   padding: 0.5em 1em;
   background-color: white;
   color: var(--colour-blue);
-  border: 2px solid;
+  border: 0.15em solid;
   border-image-source: var(--gradient-right-half);
   border-image-slice: 1;
 }
@@ -324,7 +324,7 @@ nav ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  border: 5px solid;
+  border: 0.25em solid;
   border-image-source: var(--gradient-right);
   border-image-slice: 1;
 }
@@ -339,14 +339,14 @@ nav li {
 nav li:nth-of-type(6n + 2),
 nav li:nth-of-type(6n + 4),
 nav li:nth-of-type(6n + 6) {
-  border-left: 2px solid black;
+  border-left: 0.15em solid black;
 }
 
 nav li:nth-of-type(6n + 3),
 nav li:nth-of-type(6n + 4),
 nav li:nth-of-type(6n + 5),
 nav li:nth-of-type(6n + 6) {
-  border-top: 2px solid black;
+  border-top: 0.15em solid black;
 }
 
 nav a {
@@ -387,6 +387,22 @@ and just the p elements to be limited */
   margin-right: auto;
 }
 
+blockquote {
+  position: relative;
+  margin: 1em;
+}
+
+blockquote::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: -0.75em;
+  width: 0.25em;
+  background: black;
+  background: var(--gradient-down);
+}
+
 #about ul {
   list-style-type: none;
   padding-left: 0;
@@ -409,44 +425,33 @@ and just the p elements to be limited */
   text-align: center;
 }
 
+#about li{
+  border-width: 0.15em;
+  border-style: solid;
+}
+
 #about li:nth-child(6n + 1) {
-  border: 2px solid var(--colour-red);
+  border-color: var(--colour-red);
 }
 
 #about li:nth-child(6n + 2) {
-  border: 2px solid var(--colour-orange);
+  border-color: var(--colour-orange);
 }
 
 #about li:nth-child(6n + 3) {
-  border: 2px solid var(--colour-yellow);
+  border-color: var(--colour-yellow);
 }
 
 #about li:nth-child(6n + 4) {
-  border: 2px solid var(--colour-green);
+  border-color: var(--colour-green);
 }
 
 #about li:nth-of-type(6n + 5) {
-  border: 2px solid var(--colour-blue);
+  border-color: var(--colour-blue);
 }
 
 #about li:nth-of-type(6n + 6) {
-  border: 2px solid var(--colour-indigo);
-}
-
-blockquote {
-  position: relative;
-  margin: 1em;
-}
-
-blockquote::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  bottom: 0;
-  left: -15px;
-  width: 5px;
-  background: black;
-  background: var(--gradient-down);
+  border-color: var(--colour-indigo);
 }
 
 /********** Guidelines **********/
@@ -499,20 +504,25 @@ blockquote::before {
   text-align: center;
 }
 
+#contribute ol li::before {
+  border-width: 0.05em;
+  border-style: solid;
+}
+
 #contribute ol li:nth-child(4n + 1)::before {
-  border: 1px solid var(--colour-red);
+  border-color: var(--colour-red);
 }
 
 #contribute ol li:nth-child(4n + 2)::before {
-  border: 1px solid var(--colour-green);
+  border-color: var(--colour-green);
 }
 
 #contribute ol li:nth-child(4n + 3)::before {
-  border: 1px solid var(--colour-blue);
+  border-color: var(--colour-blue);
 }
 
 #contribute ol li:nth-child(4n + 4)::before {
-  border: 1px solid var(--colour-indigo);
+  border-color: var(--colour-indigo);
 }
 
 /********** Files **********/
@@ -739,13 +749,13 @@ blockquote::before {
   nav li:nth-of-type(6n + 3),
   nav li:nth-of-type(6n + 5),
   nav li:nth-of-type(6n + 6) {
-    border-left: 2px solid black;
+    border-left: 0.15em solid black;
   }
 
   nav li:nth-of-type(6n + 4),
   nav li:nth-of-type(6n + 5),
   nav li:nth-of-type(6n + 6) {
-    border-top: 2px solid black;
+    border-top: 0.15em solid black;
   }
 
   nav li:nth-of-type(6n + 4) {
@@ -771,7 +781,7 @@ blockquote::before {
   }
 
   nav li:nth-of-type(6n + 4) {
-    border-left: 2px solid black;
+    border-left: 0.15em solid black;
   }
 
 }
