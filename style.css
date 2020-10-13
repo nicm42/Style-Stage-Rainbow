@@ -153,10 +153,12 @@ footer {
 #contribute h2,
 #styles h2 {
   text-align: center;
+  font-size: 2rem;
 }
 
 /* buttons */
 .skip-link,
+.link-guidelines,
 .link-github,
 .link-twittercontact,
 .link-rss,
@@ -172,6 +174,8 @@ footer {
 
 .skip-link:hover,
 .skip-link:focus,
+.link-guidelines:hover,
+.link-guidelines:focus,
 .link-github:hover,
 .link-github:focus,
 .link-twittercontact:hover,
@@ -363,8 +367,17 @@ blockquote::before {
 
 /********** Guidelines **********/
 
+#guidelines h2 {
+  color: var(--colour-green);
+}
+
 #guidelines h3 {
   margin-top: 1.5em;
+}
+
+.link-guidelines {
+  display: inline-block;
+  margin-top: 0.5em;
 }
 
 /********** Contribute **********/
