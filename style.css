@@ -293,6 +293,7 @@ header h1 {
     -webkit-text-stroke: 1px var(--colour-dark);
     background-size: 100%;
     background-clip: text;
+    /* -webkit-background-clip: text; */ /* Need this for it to work in Chrome, but auto-prefixer will add it on the live site */
     color: transparent;
   }
 }
@@ -405,7 +406,7 @@ blockquote::before {
   margin: 1em auto 2em auto;
   max-width: calc(100vw - 4em); /* the em figure comes from the body and container's margins and padding + grid gap */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28ch, 1fr)); /* 28ch is the number of characters without a space between them, so browsers don't put new lines in weird, hard-to-read places */
   grid-auto-rows: 1fr;
   gap: 1em;
 }
@@ -414,16 +415,11 @@ blockquote::before {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#about li {
-  flex: 1;
-  text-align: center;
-}
-
-#about li{
+  /* flex: 1; */
+  padding: 0.5em;
   border-width: 0.15em;
   border-style: solid;
+  text-align: center;
 }
 
 #about li:nth-child(6n + 1) {
