@@ -292,6 +292,7 @@ header h2 {
 
 header p {
   margin-bottom: 3em;
+  font-size: max(20px, 1rem); /* This will always be 20px or 1rem, whichever is bigger */
 }
 
 header svg {
